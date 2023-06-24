@@ -1,13 +1,15 @@
 import React from "react";
 import Search from "./Subcomponents/Search";
+import Container from "@/components/Utils/UI/Container";
+import { Provider } from "./context/StateContext/Provider";
 
 const Wallet = () => {
   return (
-    <div className="container mx-auto px-5">
-      <div className="w-[92%] px-10 mx-auto">
+    <Provider>
+      <Container>
         <Search />
-      </div>
-    </div>
+      </Container>
+    </Provider>
   );
 };
 
