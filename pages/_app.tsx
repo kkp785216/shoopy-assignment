@@ -5,8 +5,18 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <PresistentComponents>
-      <Component {...pageProps} />
-    </PresistentComponents>
+    <>
+      <div className="hidden lg:block">
+        <PresistentComponents>
+          <Component {...pageProps} />
+        </PresistentComponents>
+      </div>
+      <div className="flex justify-center items-center min-h-screen flex-col p-6">
+        <h1 className="text-center text-lg font-medium">
+          Please view this page at a width greater than 1024px for the best
+          experience.
+        </h1>
+      </div>
+    </>
   );
 }
