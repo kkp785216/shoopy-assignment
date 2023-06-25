@@ -1,26 +1,21 @@
+import {
+  PaymentDatesType,
+  PaymentStatusType,
+  PaymentTypesType,
+} from "@/lib/structure/structure";
 import { useState } from "react";
-
-type PaymentType =
-  | "Automatic Payment"
-  | "Payments"
-  | "Payment Received"
-  | "Refunds"
-  | "Transfers"
-  | "Reported Tranjections";
-
-type StatusType =
-  | "Incomming payments to review"
-  | "Tracking numbers to add"
-  | "Shiping levels to print"
-  | "Payment request to review"
-  | "Invice to pay"
-  | "Holds"
-  | "Completed";
 
 const useContextState = () => {
   const [searchValue, searchDispatch] = useState("");
-  const [paymentType, paymetTypeDispatch] = useState<null | PaymentType>(null);
-  const [statusType, statusTypeDispatch] = useState<null | StatusType>(null);
+  const [paymentType, paymetTypeDispatch] = useState<null | PaymentTypesType>(
+    null
+  );
+  const [statusType, statusTypeDispatch] = useState<null | PaymentStatusType>(
+    null
+  );
+  const [paymentDate, paymentDateDispatch] = useState<null | PaymentDatesType>(
+    null
+  );
 
   return {
     searchValue,
@@ -29,10 +24,12 @@ const useContextState = () => {
     paymetTypeDispatch,
     statusType,
     statusTypeDispatch,
+    paymentDate,
+    paymentDateDispatch,
   };
 };
 
 type ContextDataType = ReturnType<typeof useContextState>;
 
 export { useContextState };
-export type { ContextDataType, PaymentType, StatusType };
+export type { ContextDataType };

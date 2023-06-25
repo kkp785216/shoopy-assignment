@@ -1,13 +1,18 @@
 import { ChangeEvent, RefObject, useRef, useState } from "react";
 import CloseButtonIcon from "./assets/CloseButtonIcon";
 import { useFocusedState } from "./hooks/useFocusedState";
+import {
+  paymentDates,
+  paymentTypes,
+  paymentStatus,
+} from "@/lib/structure/structure";
 
 type Props = {
   title: string;
   activeFilter: string | null;
-  filterList: string[];
+  filterList: typeof paymentStatus | typeof paymentTypes | typeof paymentDates;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  onReset: () => void;
+  onReset?: () => void;
   children?: React.ReactNode;
 };
 
@@ -27,7 +32,9 @@ const FilterButton = ({
         <button
           className={`rounded-full px-4 py-2.5 focus ${
             activeFilter
-              ? "pr-12 text-[#142c8e] bg-[#d1f1ff] border-[#d1f1ff_!important]"
+              ? `text-[#142c8e] bg-[#d1f1ff] border-[#d1f1ff_!important] ${
+                  onReset ? "pr-12" : ""
+                }`
               : ""
           }`}
           onClick={toggleFocus}
@@ -35,7 +42,7 @@ const FilterButton = ({
           {title}
           {activeFilter ? `: ${activeFilter}` : ""}
         </button>
-        {activeFilter && (
+        {activeFilter && onReset && (
           <button
             className="absolute top-0 bottom-0 right-0 rounded-full aspect-square bg-[#1040c1] focus:shadow-[inset_0_0_0_3px_#56ccfe]"
             onClick={() => {
@@ -61,6 +68,7 @@ const FilterButton = ({
                   name="type"
                   value={filter}
                   onChange={onChange}
+                  defaultChecked={filter === activeFilter}
                 />
                 {filter}
               </label>

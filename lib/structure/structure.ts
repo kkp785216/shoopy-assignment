@@ -5,7 +5,7 @@ const paymentTypes = [
   "Refunds",
   "Transfers",
   "Reported Tranjections",
-];
+] as const;
 
 const paymentStatus = [
   "Incomming payments to review",
@@ -15,6 +15,19 @@ const paymentStatus = [
   "Invice to pay",
   "Holds",
   "Completed",
-];
+] as const;
 
-export { paymentStatus, paymentTypes };
+const paymentDates = [
+  "This Month",
+  "Last Month",
+  "Last 90 days",
+  "This year",
+  "Last year",
+] as const;
+
+type PaymentStatusType = (typeof paymentStatus)[number];
+type PaymentDatesType = (typeof paymentDates)[number];
+type PaymentTypesType = (typeof paymentTypes)[number];
+
+export { paymentStatus, paymentTypes, paymentDates };
+export type { PaymentDatesType, PaymentTypesType, PaymentStatusType };
