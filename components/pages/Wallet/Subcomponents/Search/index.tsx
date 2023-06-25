@@ -3,7 +3,7 @@ import SearchBox from "./Subcomponents/SearchBox";
 
 const Search = () => {
   return (
-    <div className="flex items-center justify-between space-x-5">
+    <div className="flex items-center justify-between space-x-5 mt-10 mb-6">
       <SearchBox />
       <Download />
     </div>

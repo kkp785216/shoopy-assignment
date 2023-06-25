@@ -12,7 +12,7 @@ type Props = {
 const PresistentComponents = ({ children }: Props) => {
   return (
     <>
-      <header className="sticky top-0">
+      <header className="sticky top-0 z-50">
         <Navbar />
       </header>
       {children}

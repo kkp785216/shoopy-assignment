@@ -9,7 +9,7 @@ import { useContext } from "react";
 const SearchBox = () => {
   const { searchValue, searchDispatch } = useContext(Context);
   return (
-    <div className="relative my-10 flex-auto">
+    <div className="relative flex-auto">
       <SearchIcon className="absolute top-0 left-6 bottom-0 m-auto w-6 h-6 pointer-events-none" />
       <input
         className="w-full py-4 rounded-full pr-6 pl-16 text-lg font-medium focus"
