@@ -14,7 +14,7 @@ const useContextState = () => {
     null
   );
   const [paymentDate, paymentDateDispatch] = useState<null | PaymentDatesType>(
-    null
+    "Last 90 days"
   );
 
   return {

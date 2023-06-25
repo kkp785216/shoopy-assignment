@@ -3,6 +3,10 @@ import React, { ChangeEvent, useContext } from "react";
 import FilterButton from "../../Utils/FilterButton";
 import { Context } from "@/components/pages/Wallet/context/StateContext/Context";
 
+/**
+ * filter by payment status
+ * @returns JSX Element
+ */
 const FilterStatus = () => {
   const { statusType, statusTypeDispatch } = useContext(Context);
   return (

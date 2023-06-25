@@ -4,6 +4,10 @@ type Props = {
   children: React.ReactNode;
 } & HTMLAttributes<HTMLDivElement>;
 
+/**
+ * Overall app container
+ * @returns JSX Element
+ */
 const Container = ({ children, ...props }: Props) => {
   return (
     <div className="container mx-auto px-5" {...props}>

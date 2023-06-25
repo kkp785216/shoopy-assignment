@@ -1,3 +1,7 @@
+/**
+ * Ui for when filter applied and no data is displayed
+ * @returns JSX Element
+ */
 const NoTranjections = () => {
   return (
     <div className="flex items-center flex-col min-h-[15.6rem] justify-center py-5 px-3">

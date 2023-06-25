@@ -2,6 +2,10 @@ import FilterDates from "./Subcomponents/FilterDates";
 import FilterStatus from "./Subcomponents/FilterStatus";
 import FilterTypes from "./Subcomponents/FilterTypes";
 
+/**
+ * All filter options
+ * @returns JSX Element
+ */
 const FilterBy = () => {
   return (
     <div>

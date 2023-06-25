@@ -16,6 +16,10 @@ type Props = {
   children?: React.ReactNode;
 };
 
+/**
+ * Reusable component for filter options
+ * @returns JSX Element
+ */
 const FilterButton = ({
   title,
   activeFilter,

@@ -1,6 +1,10 @@
 import { useRouter } from "next/router";
 import DownloadIcon from "./assets/DownloadIcon";
 
+/**
+ * Button where invice can be downloaded
+ * @returns JSX Element
+ */
 const Download = () => {
   /* push: router.push - navigate to given page */
   const { push } = useRouter();
