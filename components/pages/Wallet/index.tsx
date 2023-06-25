@@ -3,6 +3,7 @@ import Search from "./Subcomponents/Search";
 import Container from "@/components/Utils/UI/Container";
 import { Provider } from "./context/StateContext/Provider";
 import FilterBy from "./Subcomponents/FilterBy";
+import Tranjections from "./Subcomponents/Tranjections";
 
 const Wallet = () => {
   return (
@@ -10,6 +11,7 @@ const Wallet = () => {
       <Container>
         <Search />
         <FilterBy />
+        <Tranjections />
       </Container>
     </Provider>
   );
