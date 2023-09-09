@@ -1,4 +1,4 @@
-type TranjectionsType = {
+type TranjectionsType = { 
   transaction_id: string;
   name: string;
   date: string;
